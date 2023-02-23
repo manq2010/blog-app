@@ -86,7 +86,6 @@ After you're finished please remove all the comments and instructions!
 
 - **Set up associations between models**
 - **Write SQL queries with Active Record**
-- **Write units tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

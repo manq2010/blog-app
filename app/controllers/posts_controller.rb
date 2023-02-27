@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts.each do |post|
-      params[:title] = post.title
-    end
+    @post = Post.find(params[:id])
   end
 end

@@ -1,1 +1,6 @@
 <h1>Show user details</h1>
+
+<% @user.posts.each do |post| %>
+    <h4><%= post.title %></h4>
+    <p><%= post.text %></p>
+  <% end %>

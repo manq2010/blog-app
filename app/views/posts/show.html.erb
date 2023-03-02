@@ -1,12 +1,18 @@
-
 <section class="section">
-<h1>Posts show</h1>
 
-<% if @post.nil? %>
-    <h1>no post found</h1>
-<%else %>
-<h4><%= @post.title %></h4>
-<p><%= @post.text %></p>
+<div>
+    <h4>Post #1 by <%= @user.name %> </h4>
+    <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+    <p><%= @post.text %></p>
+</div>
+
+<% if @post.comments_counter == 0 %>
+<% else %>
+<div>
+<% @post.comments.each do |comment| %>
+      <p><%= @user.name %> : <%= comment.text %></p>
+<% end %>
+</div>
 <% end %>
 
 </section>

@@ -44,9 +44,9 @@ p {
 }
 
 img {
-  width: 100%;
-  max-width: 100%;
-  vertical-align: middle;
+  /* width: 50%; */
+  /* max-width: 50%; */
+  /* vertical-align: middle; */
 }
 
 .medium-heading {
@@ -96,4 +96,8 @@ footer {
   min-height: 70px;
   padding: 15px;
   text-align: center;
+}
+
+ul > li {
+   list-style: none;
 }

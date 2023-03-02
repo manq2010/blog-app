@@ -1,9 +1,37 @@
 <section class="section">
-<h1> Posts index</h1>
 
-<% @posts.each do |post| %>
-      <h4><%= post.title %></h4>
-      <p><%= post.text %></p>
+<% if @user.nil? %>
+<h4>User not found</h4>
+<% else %>
+<div>
+  <div>
+    <img src="<%= @user.photo %>" alt="<%= @user.name %>" >
+  </div>
+  <div>
+    <h4><%= @user.name %></h4>
+    <p>Number of posts: <%= @user.posts.count %></p>
+  </div>
+<div>
 <% end %>
+
+<ul>
+<% @posts.each_with_index do |post, index| %>
+  <li >
+      <div>
+            <h4>Post #<%= index + 1 %></h4>
+            <p><%= post.text[0..100]... %></p>
+            <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+      </div>
+      <% if post.comments_counter == 0 %>
+      <% else %>
+      <div>
+            <% post.comments.each do |comment| %>
+                  <p><%= @user.name %> : <%= comment.text %></p>
+            <% end %>
+      </div>
+      <% end %>
+  </li>
+  <% end %>
+</ul>
 
 </section>

@@ -3,15 +3,8 @@
 <ul>
 <% @users.each do |user| %>
   <li>
-    <div>
-      <img src="<%= user.photo %>" alt="<%= user.name %>" >
-    </div>
-    <div>
-      <h4><%= user.name %></h4>
-      <p>Number of posts: <%= user.posts.count %></p>
-    </div>
+  <%= render 'user', user: user %>
   </li>
   <% end %>
 </ul>
-
 </section>

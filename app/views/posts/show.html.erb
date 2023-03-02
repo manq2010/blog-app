@@ -1,18 +1,4 @@
 <section class="section">
-
-<div>
-    <h4>Post #1 by <%= @user.name %> </h4>
-    <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
-    <p><%= @post.text %></p>
-</div>
-
-<% if @post.comments_counter == 0 %>
-<% else %>
-<div>
-<% @post.comments.each do |comment| %>
-      <p><%= @user.name %> : <%= comment.text %></p>
-<% end %>
-</div>
-<% end %>
-
+    <%= render 'post', post: @post %>
+    <%= render 'comments', post: @post, user: @user %>
 </section>

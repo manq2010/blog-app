@@ -1,7 +1,7 @@
-<div>
+<div class="comments-container">
   <% if post.comments_counter > 0 %>
           <% post.comments.each do |comment| %>
-            <p><%= @user.name %> : <%= comment.text %></p>
+            <p class="comment"><%= @user.name %> : <%= comment.text %></p>
           <% end %>
           <% end %>
 </div>

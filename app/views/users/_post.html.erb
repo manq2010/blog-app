@@ -1,9 +1,9 @@
-<li>
-    <h4>Post #<%= post.id%></h4>
-    <% if post.text.present? && post.text.length > 50 %>
-        <p><%= post.text[0..100]... %></p>
+<li class="post">
+    <h4 class="small-heading">Post #<%= post.id%></h4>
+    <% if post.text.present? && post.text.length > 200 %>
+        <p><%= post.text[0..200]... %></p>
     <% else %>
         <p><%= post.text %></p>
     <% end %>
-    <p>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter %></p>
+    <p class="comment-heading">Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter %></p>
 </li>

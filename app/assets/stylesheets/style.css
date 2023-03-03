@@ -26,8 +26,9 @@ section {
 
 .user {
   display: flex;
-  height: 100px;
+  height: 120px;
   border: 1px solid rebeccapurple;
+  border-radius: 5px;
   margin-bottom: 20px;
 }
 
@@ -55,6 +56,16 @@ img {
   vertical-align: middle;
 }
 
+.bio {
+  border-radius: 5px;
+  border: 1px solid rebeccapurple;
+  padding: 20px;
+}
+
+.post {
+  padding: 10px 20px 10px 10px;
+}
+
 h1,
 h2,
 h3,
@@ -67,7 +78,6 @@ h6 {
 }
 
 p {
-  margin: 0 0 15px 0;
   text-align: justify;
 }
 
@@ -85,12 +95,27 @@ p {
   font-size: 15px;
 }
 
-div#content {
-
+.comment-heading {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 15px;
 }
 
-div#header {
+.comments-container {
+  margin-top: 0;
+  padding: 0 20px;
+}
 
+.comment {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 12px;
 }
 
 footer {

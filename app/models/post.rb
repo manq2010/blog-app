@@ -1,4 +1,7 @@
+require 'will_paginate'
+
 class Post < ApplicationRecord
+  paginates_per 5
   belongs_to :author, class_name: 'User'
   has_many :comments
   has_many :likes
@@ -10,7 +13,7 @@ class Post < ApplicationRecord
                                                numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
   def five_most_recent_comments
-    comments.order(created_at: :desc).limit(1)
+    comments.order(created_at: :desc).limit(5)
   end
 
   private

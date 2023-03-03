@@ -1,27 +1,20 @@
 :root {
   --primary: #f8ede3;
   --primary-light: #f9f1e9;
-  --primary-lightest: #fbf4ee;
-  --primary-shadow: #c6beb6;
   --secondary: #635f5b;
   --secondary-tint: #958e88;
   --tertiary: #85586f;
-  --tertiary-light: #9d798c;
   --tertiary-lightest: #b69ba9;
-  --white: #e7dee2;
   --font-main-family:
     'Calibre',
     'Inter',
     sans-serif;
-  --font-mono-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-  --fs-heading: 33px;
-  --fs-xxl: 22px;
-  --fs-xl: 20px;
+  --font-mono-family:
+    'SF Mono',
+    'Roboto Mono',
+    monospace;
   --fs-l: 18px;
   --fs-m: 16px;
-  --fs-s: 14px;
-  --fs-xs: 13px;
-  --fs-xxs: 12px;
   --border-radius: 5px;
 }
 
@@ -62,23 +55,30 @@ section {
 .user {
   display: flex;
   height: 120px;
-
-  /* border: 1px solid var(--secondary); */
+  justify-content: center;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 .user-details {
   display: grid;
-  grid-template-columns: minmax(300px, 2fr) minmax(300px, 1fr) max-content;
-  border: 1px solid var(--secondary);
+  grid-template-columns: repeat(2, minmax(150px, 220px));
   margin-left: 70px;
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius);
 }
 
 .heading-container {
   margin-left: 80px;
   display: flex;
   align-items: center;
+}
+
+.post {
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius);
+  padding: 10px 20px 10px 10px;
+  margin: 50px 40px 0 0;
 }
 
 .post-counter-details {
@@ -90,9 +90,6 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  position: relative;
-
-  /* transition: var(--transition-effect); */
 }
 
 a:hover {
@@ -114,10 +111,6 @@ img:hover {
   border-radius: 5px;
   border: 1px solid var(--secondary);
   padding: 20px;
-}
-
-.post {
-  padding: 10px 20px 10px 10px;
 }
 
 button {
@@ -148,8 +141,6 @@ h6 {
   margin: 0 0 10px 0;
   font-weight: 600;
   line-height: 1.1;
-
-  /* color: var(--secondary); */
   color: var(--tertiary-lightest);
 }
 
@@ -173,7 +164,6 @@ p {
   position: relative;
   margin: 10px 0 40px;
   width: 100%;
-  white-space: nowrap;
   font-size: var(--fs-m);
 }
 
@@ -182,13 +172,18 @@ p {
   justify-content: end;
   position: relative;
   width: 100%;
-  white-space: nowrap;
   font-size: 15px;
 }
 
 .comments-container {
-  margin-top: 0;
-  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid var(--secondary);
+  border-top: none;
+  border-radius: var(--border-radius);
 }
 
 .comment {
@@ -196,7 +191,6 @@ p {
   align-items: center;
   position: relative;
   width: 100%;
-  white-space: nowrap;
   font-size: var(--fs-m);
   color: var(--tertiary-lightest);
   font-family: var(--font-mono-family);

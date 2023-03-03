@@ -1,7 +1,4 @@
-require 'will_paginate'
-
 class Post < ApplicationRecord
-  paginates_per 5
   belongs_to :author, class_name: 'User'
   has_many :comments
   has_many :likes

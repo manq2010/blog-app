@@ -1,4 +1,8 @@
 <section class="section">
     <%= render 'post', post: @post %>
-    <%= render 'comments', post: @post, user: @user %>
+    <% if @post.comments_counter > 0 %>
+          <% @post.comments.each do |comment| %>
+            <%= render 'comments', comment: comment, user: @user %>
+            <% end %>
+          <% end %>
 </section>

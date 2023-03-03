@@ -1,3 +1,30 @@
+:root {
+  --primary: #f8ede3;
+  --primary-light: #f9f1e9;
+  --primary-lightest: #fbf4ee;
+  --primary-shadow: #c6beb6;
+  --secondary: #635f5b;
+  --secondary-tint: #958e88;
+  --tertiary: #85586f;
+  --tertiary-light: #9d798c;
+  --tertiary-lightest: #b69ba9;
+  --white: #e7dee2;
+  --font-main-family:
+    'Calibre',
+    'Inter',
+    sans-serif;
+  --font-mono-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --fs-heading: 33px;
+  --fs-xxl: 22px;
+  --fs-xl: 20px;
+  --fs-l: 18px;
+  --fs-m: 16px;
+  --fs-s: 14px;
+  --fs-xs: 13px;
+  --fs-xxs: 12px;
+  --border-radius: 5px;
+}
+
 *,
 *::before,
 *::after {
@@ -5,14 +32,22 @@
 }
 
 body {
-  font-family: Helvetica, Geneva, Arial, sans-serif;
-  font-size: 18px;
-  background-color: #fff;
+  font-family: var(--font-main-family);
+  font-size: var(--fs-l);
+  background-color: var(--primary);
   width: 100%;
   min-width: 100%;
   overflow-x: hidden;
   margin: 0;
   line-height: 1.2;
+}
+
+#header {
+  padding: 10px 25px;
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary);
+  opacity: 0.8;
 }
 
 main {
@@ -27,15 +62,17 @@ section {
 .user {
   display: flex;
   height: 120px;
-  border: 1px solid rebeccapurple;
+
+  /* border: 1px solid var(--secondary); */
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 .user-details {
   display: grid;
-  grid-template-columns: minmax(10px, 5fr) minmax(160px, 1fr) max-content;
-  max-width: 80%;
+  grid-template-columns: minmax(300px, 2fr) minmax(300px, 1fr) max-content;
+  border: 1px solid var(--secondary);
+  margin-left: 70px;
 }
 
 .heading-container {
@@ -49,6 +86,19 @@ section {
   align-items: end;
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+
+  /* transition: var(--transition-effect); */
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
 img {
   width: 100%;
   min-width: 100%;
@@ -56,14 +106,37 @@ img {
   vertical-align: middle;
 }
 
+img:hover {
+  transform: translateY(-3px);
+}
+
 .bio {
   border-radius: 5px;
-  border: 1px solid rebeccapurple;
+  border: 1px solid var(--secondary);
   padding: 20px;
 }
 
 .post {
   padding: 10px 20px 10px 10px;
+}
+
+button {
+  cursor: pointer;
+  color: var(--secondary);
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius);
+  padding: 10px 15px;
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono-family);
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--secondary-tint);
+  outline: none;
 }
 
 h1,
@@ -75,14 +148,23 @@ h6 {
   margin: 0 0 10px 0;
   font-weight: 600;
   line-height: 1.1;
+
+  /* color: var(--secondary); */
+  color: var(--tertiary-lightest);
 }
 
 p {
   text-align: justify;
+  color: var(--secondary);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 .medium-heading {
-  font-size: 20px;
+  font-size: var(--fs-xl);
 }
 
 .small-heading {
@@ -92,7 +174,7 @@ p {
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  font-size: 15px;
+  font-size: var(--fs-m);
 }
 
 .comment-heading {
@@ -115,7 +197,9 @@ p {
   position: relative;
   width: 100%;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: var(--fs-m);
+  color: var(--tertiary-lightest);
+  font-family: var(--font-mono-family);
 }
 
 footer {

@@ -1,7 +1,9 @@
 <li class="post">
-    <h4 class="small-heading">Post #<%= post.id%></h4>
+    <h4 class="small-heading">
+        <%= link_to "Post ##{post.id}", user_post_path(post.author_id, post.id) %>
+    </h4>
     <% if post.text.present? && post.text.length > 200 %>
-        <p><%= post.text[0..200]... %></p>
+        <p><%= post.text.first(150)... %></p>
     <% else %>
         <p><%= post.text %></p>
     <% end %>

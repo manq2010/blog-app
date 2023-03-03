@@ -10,7 +10,7 @@ class Post < ApplicationRecord
                                                numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
   def five_most_recent_comments
-    comments.order(created_at: :desc).limit(5)
+    comments.order(created_at: :desc).limit(1)
   end
 
   private

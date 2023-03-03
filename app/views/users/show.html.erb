@@ -14,13 +14,13 @@
 <%= render 'bio' %>
 
 <ul>
-<% @user.posts.each do |post| %>
+<% @user.three_most_recent_posts.each do |post| %>
   <%= render 'post', post: post %>
 <% end %>
 </ul>
 
 <% end %>
-<div>
-  <button type="button">See all posts</button>
+<div class="button">
+  <button type="button"><%= link_to "See all posts", user_posts_path(user_id: @user.id) %></button>
 </div>
 </section>

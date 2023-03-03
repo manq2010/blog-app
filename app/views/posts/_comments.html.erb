@@ -1,7 +1,7 @@
-<% if post.comments_counter > 0 %>
-      <div>
+<div>
+  <% if post.comments_counter > 0 %>
           <% post.comments.each do |comment| %>
             <p><%= @user.name %> : <%= comment.text %></p>
           <% end %>
-      </div>
-<% end %>
+          <% end %>
+</div>

@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :asc)
   end
 
   def show
     @user = User.find_by(id: params[:id])
-    # if @user.nil?
-    #   @users = User.all
-    #   flash.now[:alert] = 'User was not found'
-    #   render 'index'
-    # end
   end
 end

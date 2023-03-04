@@ -6,7 +6,7 @@
 </button>
 </div>
 
-<%= link_to 'Like', user_post_likes_path(@post.author_id, @post), method: :post, remote: true %>
+<%= render 'form' %>
 
 <%= render 'post', post: @post %>
 

@@ -127,6 +127,13 @@ button {
   transition: var(--transition);
 }
 
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 button:hover {
   background-color: var(--secondary-tint);
   outline: none;

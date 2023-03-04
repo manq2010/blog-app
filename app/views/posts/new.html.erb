@@ -1,21 +1,14 @@
-<section class="add-post-section">
+<section class="add-post-section flex-center">
 
 <h4>Adding New Post</h4>
 
-<%= form_with(model: @post, url: user_posts_path) do |form| %>
-    <div class="field">
-    <%= form.label :title %> <br>
+<%= bootstrap_form_with(model: @post, url: user_posts_path, layout: :horizontal) do |form| %>
+    <br>
     <%= form.text_field :title %>
-    </div>
-    
-    <div class="field">
-    <%= form.label :text %> <br>
+    <br>
     <%= form.text_area :text %>
-    </div>
-    
-    <div class="actions">
-    <%= form.submit "Add Post" %>
-    </div>
+    <br>
+    <%= form.button "Add Post" %>
     <% end %>
     
 </section>

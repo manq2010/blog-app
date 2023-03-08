@@ -12,12 +12,12 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should have a body' do
-      expect(response.body).to include('<h1>User Details</h1>')
+      expect(response.body).to include('Number of posts: 5')
     end
   end
 
   describe 'GET /show' do
-    before(:example) { get('/users/1') }
+    before(:example) { get('/users/96') }
     it 'should return success status' do
       expect(response).to have_http_status(:ok)
     end
@@ -27,7 +27,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should have a body' do
-      expect(response.body).to include('<h1>Show user details</h1>')
+      expect(response.body).to include('See all posts')
     end
   end
 end

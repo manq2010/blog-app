@@ -22,7 +22,6 @@ REQUIRED SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -52,7 +51,6 @@ After you're finished please remove all the comments and instructions!
 # 📖 Blog App <a name="about-project"></a>
 
 > This project shows the list of posts and empower readers to interact with them by adding comments and liking posts.
-
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -97,10 +95,9 @@ After you're finished please remove all the comments and instructions!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
- To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -114,7 +111,8 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this repository by using the command line : 
+Clone this repository by using the command line :
+
 - `git clone git@github.com:manq2010/blog-app.git`
 
 ### Install
@@ -127,7 +125,7 @@ Install this project with:
 
 To run the project, execute the following command:
 
- `rails server`
+`rails server`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,6 +138,12 @@ To run the project, execute the following command:
 - GitHub: [@manq2010](https://github.com/manq2010/)
 - Twitter: [@mancoba_c](https://twitter.com/mancoba_c/)
 - LinkedIn: [mancobasihlongonyane](https://linkedin.com/in/mancobasihlongonyane/)
+
+👤 **Simeon Trust**
+
+- GitHub: [@Trust-007](https://github.com/Trust-007/)
+- Twitter: [@simeontrust7](https://twitter.com/simeontrust7/)
+- LinkedIn: [trust-simeon](https://linkedin.com/in/trust-simeon/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- FUTURE FEATURES -->

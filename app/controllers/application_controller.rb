@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
+  # Catch all CanCan errors and alert the user of the exception
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
+  end
+
   protect_from_forgery with: :exception
 
   # def after_sign_out_path_for(resource_or_scope)
@@ -20,9 +25,4 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :photo, :bio, :email, :password, :current_password)
     end
   end
-
-    # Catch all CanCan errors and alert the user of the exception
-    rescue_from CanCan::AccessDenied do | exception |
-      redirect_to root_url, alert: exception.message
-    end
 end

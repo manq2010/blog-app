@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   # load_and_authorize_resource
 
   def new
@@ -19,6 +18,13 @@ class CommentsController < ApplicationController
       flash.now[:error] = 'Error: Comment could not be saved'
       render :new
     end
+  end
+
+  def destoy
+    @comment = Comment.find(params[:post_id])
+    @post = @comment.post
+    @comment.destroy
+    redirect_to user_post_path(@post.author_id, @post)
   end
 
   private

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     # @posts = Post.where(author_id: params[:user_id])
     # @user = User.find(params[:user_id])
@@ -31,9 +33,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    redirect_to user_posts_path(params[:user_id]), notice: 'Post was successfully deleted.'
+  end
+
   private
 
   def post_params
-    params.permit(:title, :text)
+    params.require(:post).permit(:title, :text).merge(author: current_user)
   end
 end

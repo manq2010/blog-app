@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  # load_and_authorize_resource
+
   def index
     # @posts = Post.where(author_id: params[:user_id])
     # @user = User.find(params[:user_id])
@@ -29,6 +32,10 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error: Post could not be saved'
       render :new, locals: { post: @post }
     end
+  end
+
+  def destroy
+
   end
 
   private

@@ -12,9 +12,9 @@
 
 <%= f.text_area :bio, required: true  %><br />
 
-<%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %><br />
+<%= f.select :role, [["user", "user"], ["admin", "admin"]]%><br />
 
-<%= f.select :role, [["admin", 1], ["user", 2]], include_blank: "Select a role"%><br />
+<%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %><br />
 
 <% if @minimum_password_length %>
   <%= f.password_field :password, help: "Must be at least #{@minimum_password_length} characters long", required: true %>

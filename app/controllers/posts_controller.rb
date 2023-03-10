@@ -34,18 +34,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # @posts = Post.where(author_id: params[:user_id])
-    # @post.destroy
-    # redirect_to user_posts_url
-
-    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_posts_path(current_user, @post), notice: 'Post deleted successfully'
+    redirect_to user_posts_path(params[:user_id]), notice: 'Post was successfully deleted.'
   end
 
   private
 
   def post_params
-    params.permit(:title, :text)
+    params.require(:post).permit(:title, :text).merge(author: current_user)
   end
 end

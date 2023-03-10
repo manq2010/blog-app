@@ -1,34 +1,26 @@
+# frozen_string_literal: true
+
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Handle the case where we don't have a current_user i.e. the user is a guest
-    # user ||= User.new
 
-    # Define User abilities
-    # if user.is? :admin
-    #   can :manage, :all
-    # else
-    #   can :read, :create, :destroy, Post
-    #   can :read, :create, :destroy, Comment
-    # end
+    return unless user.present?
+
+    can :read, :all
+    can %i[create update destroy], Post, author_id: user.id
+    can %i[create update destroy], Comment , author_id: user.id
+
+    return unless user.is? :admin
+
+    can :manage, :all
 
     # Define abilities for the user here. For example:
     #
-    return unless user.present?
-
-    # can :read, :create, :destroy, Post, author_id: user.id
-    # can :read, :create, :destroy, Comment, author_id: user.id
-    # can :manage, Like, author_id: user.id
-
-    can :read, :all # everyone can read everything
-    can :create, Comment # everyone can create comments
-    can :create, Post # everyone can create comments
-    can :destroy, Comment, author_id: user.id # users can delete their own comments
-    can :destroy, Post, author_id: user.id # users can delete their own posts
-    return unless user.admin?
-
-    can :manage, :all
+    #   return unless user.present?
+    #   can :read, :all
+    #   return unless user.admin?
+    #   can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

@@ -129,7 +129,7 @@ button {
   background-color: transparent;
   border: 1px solid var(--secondary);
   border-radius: var(--border-radius);
-  padding: 10px 15px;
+  padding: 5px;
   font-size: var(--fs-xs);
   font-family: var(--font-mono-family);
   line-height: 1;

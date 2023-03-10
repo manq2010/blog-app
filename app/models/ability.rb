@@ -1,15 +1,12 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     return unless user.present?
 
     can :read, :all
     can %i[create update destroy], Post, author_id: user.id
-    can %i[create update destroy], Comment , author_id: user.id
+    can %i[create update destroy], Comment, author_id: user.id
 
     return unless user.is? :admin
 

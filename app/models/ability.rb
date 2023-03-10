@@ -17,10 +17,15 @@ class Ability
     #
     return unless user.present?
 
-    can :read, :create, :destroy, Post, author_id: user.id
-    can :read, :create, :destroy, Comment, author_id: user.id
-    can :manage, Like, author_id: user.id
+    # can :read, :create, :destroy, Post, author_id: user.id
+    # can :read, :create, :destroy, Comment, author_id: user.id
+    # can :manage, Like, author_id: user.id
 
+    can :read, :all # everyone can read everything
+    can :create, Comment # everyone can create comments
+    can :create, Post # everyone can create comments
+    can :destroy, Comment, author_id: user.id # users can delete their own comments
+    can :destroy, Post, author_id: user.id # users can delete their own posts
     return unless user.admin?
 
     can :manage, :all
